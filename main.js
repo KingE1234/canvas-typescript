@@ -40,10 +40,10 @@ line(490, 200, 0, 490,'purple')
 
 line(50, 60, 700, 800,'red')
 
-$('input[type="range"]').rangeslider({
-    polyfill: false
-  });
-  
-  $('#relationship-status-slider').on('change input', function() {
-          $('#relationship-status-output').text($(this).val());
-      });
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = slider.value;
+}

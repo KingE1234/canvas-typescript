@@ -19,26 +19,27 @@ var line = function(x1, y1, x2, y2, colour){
     context.stroke();
 }
 
-var redrawLouis = function() {
+var redrawLouis = function(slide) {
     line(0, 490, 490, 0,'blue')    
     line(0, 200, 490, 490,'purple')
+    for(let step=20; step <= 450; step+=3){
+        line(0, 500, step, 300,'red')    
+    } 
+    
+    for(let step=20; step <= slide; step+=3){
+        line(450, 500, step, 300,'red')    
+    }
+    
+    line(0, 0, 490, 490,'blue')
+    line(490, 200, 0, 490,'purple')
+    
+    line(50, 60, 700, 800,'red')
+    
 }
  
 clearCanvas()
 redrawLouis()
 
-for(let step=20; step <= 450; step+=3){
-    line(0, 500, step, 300,'red')    
-} 
-
-for(let step=20; step <= 450; step+=3){
-    line(450, 500, step, 300,'red')    
-}
-
-line(0, 0, 490, 490,'blue')
-line(490, 200, 0, 490,'purple')
-
-line(50, 60, 700, 800,'red')
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
@@ -46,4 +47,6 @@ output.innerHTML = slider.value;
 
 slider.oninput = function() {
     output.innerHTML = slider.value;
+    clearCanvas()
+    redrawLouis(slider.value)
 }

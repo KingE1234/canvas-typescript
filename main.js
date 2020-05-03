@@ -31,6 +31,8 @@ var cross = function(x, y) {
     
 }
 
+
+
 var redrawLouis = function(slide, red, green, blue) {
 
     for(let step=20; step <= 450; step+=3){
@@ -41,10 +43,10 @@ var redrawLouis = function(slide, red, green, blue) {
         line(450, 500, step, 300,rgb(red*step/490,green,blue))    
     }
     
-
-
-    cross(slide, 50)
-    cross(slide, 480)
+    var x = parseInt(slide)
+    
+    cross(x, 50)
+    cross(x, 480)
 }
  
 clearCanvas()

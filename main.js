@@ -22,10 +22,17 @@ var line = function(x1, y1, x2, y2, colour){
     context.lineTo(x2,y2);
     context.stroke();
 }
+var cross = function(x, y) {
+    line(x+5, y, x-5, y,'black')
+    line(x, y-10, x, y+10,'black')    
+    
+     //line(280, 50, 270, 50,'black')
+     //line(275, 40, 275, 60,'black')
+    
+}
 
 var redrawLouis = function(slide, red, green, blue) {
-    line(0, 490, 490, 0,'blue')    
-    line(0, 200, 490, 490,'purple')
+
     for(let step=20; step <= 450; step+=3){
         line(0, 500, step, 300,'red')    
     } 
@@ -34,11 +41,10 @@ var redrawLouis = function(slide, red, green, blue) {
         line(450, 500, step, 300,rgb(red*step/490,green,blue))    
     }
     
-    line(0, 0, 490, 490,'blue')
-    line(490, 200, 0, 490,'purple')
-    
-    line(50, 60, 700, 800,'red')
-    
+
+
+    cross(slide, 50)
+    cross(slide, 480)
 }
  
 clearCanvas()

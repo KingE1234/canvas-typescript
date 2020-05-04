@@ -33,20 +33,23 @@ var cross = function(x, y) {
 
 
 
-var redrawLouis = function(slide, red, green, blue) {
+var redrawLouis = function(slideX, slideY, red, green, blue) {
 
     for(let step=20; step <= 450; step+=3){
         line(0, 500, step, 300,'red')    
     } 
     
-    for(let step=20; step <= slide; step+=3){
+    for(let step=20; step <= slideX; step+=3){
         line(450, 500, step, 300,rgb(red*step/490,green,blue))    
     }
     
-    var x = parseInt(slide)
+    var x = parseInt(slideX)
+    var Y = parseInt(slideY)
     
-    cross(x, 50)
+    cross(x, 5)
+    cross(x, Y)
     cross(x, 480)
+    
 }
  
 clearCanvas()
@@ -56,6 +59,9 @@ redrawLouis()
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
+var sliderY = document.getElementById("myRangeY");
+var outputY = document.getElementById("outputY");
+outputY.innerHTML = sliderY.value;
 var slider2 = document.getElementById("myRange2");
 var output2 = document.getElementById("demo2");
 output2.innerHTML = slider2.value;
@@ -64,18 +70,22 @@ var output3 = document.getElementById("demo3");
 output3.innerHTML = slider3.value;
 var slider4 = document.getElementById("myRange4");
 var output4 = document.getElementById("demo4");
-output3.innerHTML = slider4.value;
+output4.innerHTML = slider4.value;
 
 var updateSlider = function() {
     output.innerHTML = slider.value;
+    outputY.innerHTML = sliderY.value;
     output2.innerHTML = slider2.value;
     output3.innerHTML = slider3.value;
     output4.innerHTML = slider4.value;
+    
+    
     clearCanvas()
-    redrawLouis(slider.value, slider2.value, slider3.value, slider4.value)
+    redrawLouis(slider.value, sliderY.value, slider2.value, slider3.value, slider4.value)
 }
 
 slider.oninput = updateSlider
+sliderY.oninput = updateSlider
 slider2.oninput = updateSlider
 slider3.oninput = updateSlider
 slider4.oninput = updateSlider

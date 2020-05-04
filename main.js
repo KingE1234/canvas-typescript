@@ -48,10 +48,16 @@ var boy = function(x, y) {
     line(x, y, x-3, y+5,'green')
     line(x+3, y+5, x, y,'green')
     line(x-1, y-9, x-1, y-8,'black')
-    line(x+2, y-9, x+2, y-8,'black') 
-
+    line(x+2, y-9, x+2, y-8,'black')
 
 }
+
+var monster = function(x, y) {
+
+    line(x, y+4, x-4, y-4,'black')
+}
+
+
 
 var redrawLouis = function(slideX, slideY, red, green, blue) {
 
@@ -68,6 +74,7 @@ var redrawLouis = function(slideX, slideY, red, green, blue) {
     
     //cross(x, 5)
     boy(x, Y)
+    monster(x+50, Y)
     //cross(x, 480)
     
     
@@ -110,3 +117,5 @@ sliderY.oninput = updateSlider
 slider2.oninput = updateSlider
 slider3.oninput = updateSlider
 slider4.oninput = updateSlider
+
+updateSlider()

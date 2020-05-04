@@ -52,9 +52,16 @@ var boy = function(x, y) {
 
 }
 
+
 var monster = function(x, y) {
 
-    line(x, y+4, x-4, y-4,'black')
+    var height = 20
+    var width = 14
+
+    line(x, y, x, y+height,'black')
+    line(x, y+height, x+width, y+height,'black')
+    line(x+width, y+height, x+width, y,'black')
+    line(x+width, y, x, y,'black')
 }
 
 

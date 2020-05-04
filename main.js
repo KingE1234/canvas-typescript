@@ -31,7 +31,27 @@ var cross = function(x, y) {
     
 }
 
+var boy = function(x, y) {
+    //line(x+5, y, x-5, y,'black')
+    line(x, y-4, x, y+10,'green') 
 
+    // exercise ?
+    //line(x-4, y-8, x+4, y-8,'black')
+    line(x-5, y+15, x, y+10,'blue')
+    line(x, y+10, x+5, y+15,'blue')
+    line(x-5, y+15, x-2, y+15,'black')
+    line(x+5, y+15, x+7, y+15)
+    line(x-4, y-8, x, y-14,'black')
+    line(x, y-14, x+4, y-8,'black')
+    line(x-4, y-8, x, y-4,'black')
+    line(x+4, y-8, x, y-4,'black')
+    line(x, y, x-3, y+5,'green')
+    line(x+3, y+5, x, y,'green')
+    line(x-1, y-9, x-1, y-8,'black')
+    line(x+2, y-9, x+2, y-8,'black') 
+
+
+}
 
 var redrawLouis = function(slideX, slideY, red, green, blue) {
 
@@ -46,9 +66,10 @@ var redrawLouis = function(slideX, slideY, red, green, blue) {
     var x = parseInt(slideX)
     var Y = parseInt(slideY)
     
-    cross(x, 5)
-    cross(x, Y)
-    cross(x, 480)
+    //cross(x, 5)
+    boy(x, Y)
+    //cross(x, 480)
+    
     
 }
  

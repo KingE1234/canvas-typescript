@@ -51,17 +51,28 @@ var boy = function(x, y) {
     line(x+2, y-9, x+2, y-8,'black')
 
 }
+var lefArm = function(x, y) {
+    line(x, y, x-6, y+10,'black')
+    line(x-6, y+10, x, y+10,'black')
+    line(x, y+10, x, y+0,'black')
+}
+
 
 
 var monster = function(x, y) {
 
-    var height = 20
-    var width = 14
+    var size = 20
+    var bodyHeight = size
+    var bodyWidth = size /1.4
 
-    line(x, y, x, y+height,'black')
-    line(x, y+height, x+width, y+height,'black')
-    line(x+width, y+height, x+width, y,'black')
-    line(x+width, y, x, y,'black')
+
+    line(x, y, x, y+bodyHeight,'black')
+    line(x, y+bodyHeight, x+bodyWidth, y+bodyHeight,'black')
+    line(x+bodyWidth, y+bodyHeight, x+bodyWidth, y,'black')
+    line(x+bodyWidth, y, x, y,'black')
+    lefArm(x, y+bodyHeight)
+    // line()
+
 }
 
 

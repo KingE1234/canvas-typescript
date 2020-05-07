@@ -31,7 +31,7 @@ var cross = function(x, y) {
     
 }
 
-var boy = function(x, y) {
+var boy = function(x, y) {  
     //line(x+5, y, x-5, y,'black')
     line(x, y-4, x, y+10,'green') 
 
@@ -57,13 +57,20 @@ var lefArm = function(x, y) {
     line(x, y+10, x, y+0,'black')
 }
 
+var size = 20
+    var bodyHeight = size
+    var bodyWidth = size /1.4
 
+var rightArm = function(x, y) {
+    line(x, y, x+bodyWidth-6, y+bodyHeight-10,'black')
+    line(x, y+bodyHeight-10, x+bodyWidth-6, y+bodyHeight-10)
+    line(x, y, x, y+bodyHeight-10)
+
+}
 
 var monster = function(x, y) {
 
-    var size = 20
-    var bodyHeight = size
-    var bodyWidth = size /1.4
+    
 
 
     line(x, y, x, y+bodyHeight,'black')
@@ -71,6 +78,7 @@ var monster = function(x, y) {
     line(x+bodyWidth, y+bodyHeight, x+bodyWidth, y,'black')
     line(x+bodyWidth, y, x, y,'black')
     lefArm(x, y+bodyHeight)
+    rightArm(x+bodyWidth, y+bodyHeight)
     // line()
 
 }

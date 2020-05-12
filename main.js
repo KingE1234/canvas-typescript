@@ -70,16 +70,16 @@ var rightArm = function(x, y) {
 
 var monster = function(x, y) {
 
-    
-
-
     line(x, y, x, y+bodyHeight,'black')
-    line(x, y+bodyHeight, x+bodyWidth, y+bodyHeight,'black')
+    line(x, y+bodyHeight, x+bodyWidth, y+bodyHeight,'purple')
     line(x+bodyWidth, y+bodyHeight, x+bodyWidth, y,'black')
     line(x+bodyWidth, y, x, y,'black')
     lefArm(x, y+bodyHeight)
     rightArm(x+bodyWidth, y+bodyHeight)
-    // line()
+    line(x, y+bodyHeight, x, y+bodyWidth+30,'purple')
+    line(x, y+bodyHeight+25, x+bodyWidth, y+bodyHeight+25,'purple')
+    line(x+bodyWidth, y+bodyWidth+30, x+bodyWidth, y+bodyWidth,'purple')
+    line(x, y+bodyWidth+30, x, y+bodyHeight+35,'black')
 
 }
 

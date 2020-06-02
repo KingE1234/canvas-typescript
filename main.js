@@ -86,6 +86,11 @@ var monster = function(x, y) {
     line(x, y+bodyHeight+35, x+4, y+bodyHeight+35,'blue')
     line(x+4, y+bodyHeight+35, x+4, y+bodyHeight+26,'blue')
     line(x+4, y+bodyHeight+35, x+10, y+bodyHeight+35,'blue')
+    line(x+bodyWidth /2, y+2, x+2, y+bodyHeight /2,'green')
+    line(x+2, y+bodyHeight /2, x+bodyWidth /2, y+bodyHeight-2,'green')
+    line(x+bodyWidth /2, y+bodyHeight-2, x+bodyWidth-2, y+bodyHeight /2,'green')
+    line(x+bodyWidth-2, y+bodyHeight /2, x+bodyWidth /2, y+2,'green')
+    line(x+bodyWidth /2, y+bodyHeight /2, x+bodyWidth /2, y+bodyHeight /2+1,'black')
 
 }
 

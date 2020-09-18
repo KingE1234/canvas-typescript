@@ -96,7 +96,7 @@ var monster = function(x, y) {
 
 
 
-var redrawLouis = function(slideX, slideY, red, green, blue, sliderXmonster) {
+var redrawLouis = function(slideX, slideY, red, green, blue, sliderXmonster, sliderYmonster) {
 
     for(let step=20; step <= 450; step+=3){
         line(0, 500, step, 300,'red')    
@@ -108,11 +108,12 @@ var redrawLouis = function(slideX, slideY, red, green, blue, sliderXmonster) {
     
     var x = parseInt(slideX)
     var xmonster = parseInt(sliderXmonster)
+    var ymonster = parseInt(sliderYmonster)
     var Y = parseInt(slideY)
     
     //cross(x, 5)
     boy(x, Y)
-    monster(xmonster, Y)
+    monster(xmonster, ymonster)
     //cross(x, 480)
     
     
@@ -127,6 +128,8 @@ var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 var sliderXmonster = document.getElementById("myRangeXmonster");
 var outputXmonster = document.getElementById("outputXmonster");
+var sliderYmonster = document.getElementById("myRangeYmonster");
+var outputYmonster = document.getElementById("outputYmonster");
 outputXmonster.innerHTML = sliderXmonster.value;
 var sliderY = document.getElementById("myRangeY");
 var outputY = document.getElementById("outputY");
@@ -148,13 +151,15 @@ var updateSlider = function() {
     output3.innerHTML = slider3.value;
     output4.innerHTML = slider4.value;
     outputXmonster.innerHTML = sliderXmonster.value;
+    outputYmonster.innerHTML = sliderYmonster.value;
     
     clearCanvas()
-    redrawLouis(slider.value, sliderY.value, slider2.value, slider3.value, slider4.value, sliderXmonster.value)
+    redrawLouis(slider.value, sliderY.value, slider2.value, slider3.value, slider4.value, sliderXmonster.value, sliderYmonster.value)
 }
 
 slider.oninput = updateSlider
 sliderXmonster.oninput = updateSlider
+sliderYmonster.oninput = updateSlider
 sliderY.oninput = updateSlider
 slider2.oninput = updateSlider
 slider3.oninput = updateSlider

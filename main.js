@@ -102,7 +102,7 @@ var redrawLouis = function(slideX, slideY, red, green, blue, sliderXmonster, sli
         line(0, 500, step, 300,'red')    
     } 
     
-    for(let step=20; step <= slideX; step+=3){
+    for(let step=20; step <= 123; step+=3){
         line(450, 500, step, 300,rgb(red*step/490,green,blue))    
     }
     
@@ -165,6 +165,11 @@ var changeWorld = function() {
 
 }
 
+canvas.addEventListener('keydown',this.check,false);
+
+function check(e) {
+    alert(e.keyCode);
+}
 
 slider.oninput = redrawWorld
 sliderXmonster.oninput = redrawWorld

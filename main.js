@@ -144,7 +144,7 @@ var slider4 = document.getElementById("myRange4");
 var output4 = document.getElementById("demo4");
 output4.innerHTML = slider4.value;
 
-var updateSlider = function() {
+var redrawWorld = function() {
     output.innerHTML = slider.value;
     outputY.innerHTML = sliderY.value;
     output2.innerHTML = slider2.value;
@@ -157,12 +157,23 @@ var updateSlider = function() {
     redrawLouis(slider.value, sliderY.value, slider2.value, slider3.value, slider4.value, sliderXmonster.value, sliderYmonster.value)
 }
 
-slider.oninput = updateSlider
-sliderXmonster.oninput = updateSlider
-sliderYmonster.oninput = updateSlider
-sliderY.oninput = updateSlider
-slider2.oninput = updateSlider
-slider3.oninput = updateSlider
-slider4.oninput = updateSlider
+var changeWorld = function() {
+    sliderXmonster.value = (sliderXmonster.value - 1);
+    if(sliderXmonster.value <= 0) sliderXmonster.value = 400;
+    redrawWorld();
+    setTimeout(changeWorld,500);
 
-updateSlider()
+}
+
+
+slider.oninput = redrawWorld
+sliderXmonster.oninput = redrawWorld
+sliderYmonster.oninput = redrawWorld
+sliderY.oninput = redrawWorld
+slider2.oninput = redrawWorld
+slider3.oninput = redrawWorld
+slider4.oninput = redrawWorld
+
+redrawWorld();
+
+setTimeout(changeWorld,500);
